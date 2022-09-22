@@ -9,7 +9,7 @@
 .items {
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     flex-wrap: wrap;
     list-style-type: none;
     padding: 1rem 0;

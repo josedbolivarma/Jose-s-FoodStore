@@ -27,7 +27,7 @@ img {
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     text-transform: uppercase;
 }
