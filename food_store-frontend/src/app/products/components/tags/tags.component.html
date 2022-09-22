@@ -1,0 +1,25 @@
+<div 
+*ngIf="tags"
+class="tags">
+
+    <div 
+        class="tag"
+        *ngFor="let tag of tags"
+        routerLink="/tag/{{ tag.name }}"
+        [ngStyle]="{
+            background: 'url(' + tag.imageUrl + ')',
+            backgroundPosition: '50%',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+        }"
+    >   
+            <div class="opacity"></div>
+            <div class="content">
+                <h2 class="title">
+                    {{ tag.name }}
+                    <br> ({{ tag.count }})
+                </h2>
+            </div>
+    </div>
+    
+</div>

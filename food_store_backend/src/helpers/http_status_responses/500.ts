@@ -1,0 +1,1 @@
+export const Response500 = 500;

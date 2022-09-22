@@ -1,0 +1,104 @@
+<!-- <app-search></app-search>
+<app-tags></app-tags>
+<app-not-found
+[visible]="!foods || !foods.length"
+resetLinkText="Reset Search"
+></app-not-found> -->
+
+<app-tags-container></app-tags-container>
+
+<search></search>
+
+<app-not-found
+[visible]="!foods || !foods.length"
+resetLinkText="Reset Search"
+></app-not-found>
+
+<div
+*ngIf="foods && foods.length > 0"
+class="food_container">
+    <ul class="items">
+        <li class="item" *ngFor="let food of foods">
+            <a routerLink="/food/{{ food.id }}" class="link">
+                <img class="image" [src]="food.imageUrl" [alt]="food.name">
+                <div class="divider"></div>
+                <div class="content">
+                    <div class="name">
+                        {{ food.name }}
+                    </div>
+                    <span class="favorite {{ food.favorite ? '' : 'not' }}">
+                        ❤
+                    </span>
+    
+                    <div class="stars">
+                        Start
+                    </div>
+                    <div class="product-item-footer">
+                        <div class="origins">
+                            <span *ngFor="let origin of food.origins">
+                                {{ origin }}
+                            </span>
+                        </div>
+    
+                        <div class="cook-time">
+                            <span>🕛</span>
+                            {{ food.cookTime }}
+                        </div>
+                    </div>
+    
+                    <div class="box">
+                    <div class="price">
+                        <span>
+                            {{ food.price | currency }}
+                        </span>                
+                    </div>
+                        <button class="btn-add">Add</button>
+                    </div>
+    
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+
+<!-- 
+<ul>
+    <li *ngFor="let food of foods">
+        <a routerLink="/food/{{ food.id }}">
+            <img [src]="food.imageUrl" [alt]="food.name">
+            <div class="content">
+                <div class="name">
+                    {{ food.name }}
+                </div>
+                <span class="favorite {{ food.favorite ? '' : 'not' }}">
+                    ❤
+                </span>
+
+                <div class="stars">
+                    Start
+                </div>
+                <div class="product-item-footer">
+                    <div class="origins">
+                        <span *ngFor="let origin of food.origins">
+                            {{ origin }}
+                        </span>
+                    </div>
+
+                    <div class="cook-time">
+                        <span>🕛</span>
+                        {{ food.cookTime }}
+                    </div>
+                </div>
+
+                <div class="price">
+                    <span>
+                        {{ food.price | currency }}
+                    </span>
+                </div>
+
+            </div>
+        </a>
+    </li>
+</ul> -->

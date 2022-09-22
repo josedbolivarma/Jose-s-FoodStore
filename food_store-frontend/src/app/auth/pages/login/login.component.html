@@ -1,0 +1,40 @@
+<div class="details">
+<div class="login_container">
+        <app-title
+        title="Login"     
+        fontSize="2.8rem"   
+        margin="1rem 0 2rem 1.4rem"
+        >
+        </app-title>
+
+        <form 
+        autocomplete="off"
+        [formGroup]="loginForm" (ngSubmit)="submit()">
+            <text-input
+            [control]="fc['email']"
+            [showErrorsWhen]="isSubmitted"
+            type="email"
+            label="Email"            
+            >
+            </text-input>
+            
+            <text-input
+            [control]="fc['password']"
+            [showErrorsWhen]="isSubmitted"
+            type="password"
+            label="Password"            
+            >
+            </text-input>
+
+
+            <default-button text="Login"></default-button>
+
+            <div class="register">
+                New user? &nbsp;
+                <a routerLink="/register" [queryParams]="{ returnUrl: returnUrl }">
+                    Register here
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

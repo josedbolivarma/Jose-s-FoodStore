@@ -1,0 +1,11 @@
+<div class="not-found" *ngIf="visible"
+[routerLink]="resetLinkRoute"
+>
+    <div class="content">
+        <p>{{ notFoundMessage }}</p>
+        <a>{{ resetLinkText }}</a>
+    </div>
+    <img 
+    src="https://thumbs.dreamstime.com/b/error-page-template-website-template-reports-page-not-found-151438536.jpg" 
+    alt="{{ notFoundMessage }}">
+</div>

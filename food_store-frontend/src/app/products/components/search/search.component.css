@@ -1,0 +1,99 @@
+.search {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    margin: 1rem 0;
+}
+
+.search_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .4rem;
+    position: relative;
+    width: 400px;
+    padding: .5rem;
+    background-color: #FFF;
+    border-radius: 4px;
+}
+
+.search_input {
+    padding: .5rem;
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.search_button {
+    width: 120px;
+    padding: .5rem 0;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background-color: #ff4f04;
+    color: #FFF;
+    font-weight: 800;
+    font-size: 1rem;
+    transition: all .3s ease-in-out;
+}
+
+.search_button:hover {
+    letter-spacing: .3px;
+    opacity: .9;
+    cursor: pointer;
+}
+
+/* LIST GROUP */
+
+.list-group {
+    width: 100%;
+    background-color: #999;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group-item,
+.list-group-item-active,
+.list-group-item-error {
+    border-bottom: 1px solid;
+    padding: 1rem 0;
+    padding-left: .4rem;
+    transition: .3s opacity ease-in-out;
+}
+
+.list-group-item {
+    background-color: #FFF;
+    border-color: #CCC;
+}
+
+.list-group-item-active {
+    background-color: rgb(231, 255, 251);
+    border-color: #000000;
+}
+
+.list-group-item-error {
+    background-color: #d72929;
+    border-color: #000000;
+}
+
+.list-group-item-active a,
+.list-group-item-error a {
+    font-size: 1.8rem;
+    font-weight: bold;  
+}
+
+.list-group-item:hover,
+.list-group-item-active {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.list-group-item a {
+    font-size: 1.8rem;
+} 
+

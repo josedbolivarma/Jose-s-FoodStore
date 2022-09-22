@@ -1,0 +1,53 @@
+<div class="search">
+    <div class="search_container">
+        <input 
+        class="search_input"
+        #s 
+        type="text"
+        placeholder="Search Your Food!"
+        (keyup)="onKeyPress( s.value )"
+        (keyup.enter)="search( s.value )"
+        [value]="searchTerm"
+        >
+        <button
+        class="search_button"
+        (click)="search( s.value )"
+        >
+            Search
+        </button>
+        
+    </div>
+</div>
+
+<ul class="list-group"
+*ngIf="showSuggest"
+>
+    <li class="list-group-item" 
+    *ngFor="let food of suggestFood"
+    routerLink="/food/{{ food.id }}"
+    >
+        <a class="list-group-link">
+            {{
+                food.name
+            }}
+        </a>
+    </li>
+
+    <li *ngIf="suggestTerm && suggestFood.length" class="list-group-item-active" 
+    routerLink="/search/{{ suggestTerm }}"
+    >
+        <a class="list-group-link">
+            Buscar por termino "{{ suggestTerm }}"
+        </a>
+    </li>
+
+    <!-- Not Found Suggest -->
+    <li *ngIf="!suggestFood.length && suggestTerm.length > 0" 
+    class="list-group-item-error" 
+    >
+        <a class="list-group-link">
+            Not Found By Term "{{ suggestTerm }}"
+        </a>
+    </li>
+
+</ul>
